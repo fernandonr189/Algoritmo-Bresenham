@@ -55,7 +55,7 @@ public class Canvas extends JFrame {
                     p += 2 * dy;
                 }
                 x += incX;
-                buffer.setRGB(x, y, a.getRGB());
+                pixel(x, y, a);
             }
         }else{
             p = 2 * dx - dy;
@@ -67,8 +67,12 @@ public class Canvas extends JFrame {
                     p += 2 * dx;
                 }
                 y += incY;
-                buffer.setRGB(x, y, a.getRGB());
+                pixel(x, y, a);
             }
         }
+    }
+
+    private void pixel(int x, int y, Color a) {
+        buffer.setRGB(x, y, a.getRGB());
     }
 }
